@@ -311,33 +311,52 @@ function play(guild, song) {
 
 
 client.on('message', message => {
-    if (message.content === '!*help') {
-        let helpEmbed = new Discord.RichEmbed()
-        .setTitle('**أوامر الميوزك...**')
-        .setDescription('**برفكس البوت (!)**')
-        .addField('play', 'لتشغيل اغنية')
-        .addField('join', 'دخول رومك الصوتي')
-        .addField('disconnect', 'الخروج من رومك الصوتي')
-        .addField('skip', 'تخطي الأغنية')
-        .addField('pause', 'ايقاف الاغنية مؤقتا')
-        .addField('resume', 'تكملة الاغنية')
-        .addField('queue', 'اظهار قائمة التشغيل')
-        .addField('np', 'اظهار الاغنية اللي انت مشغلها حاليا')
-        .setFooter('(general_commands) لاظهار الاوامر العامة')
-      message.channel.send(helpEmbed);
-    }
+    if(message.content.startsWith(prefix+'help')) {
+   const embed = new Discord.RichEmbed()
+.setColor('RANDOM')
+        .setDescription(`**
+..<اوامر الميوزك>..
+* --------------------------------------------- *
+'!&play', 'لتشغيل اغنية'
+
+'!&join', 'دخول رومك الصوتي'
+
+'!&disconnect', 'الخروج من رومك الصوتي'
+
+'!&skip', 'تخطي الأغنية'
+
+'!&pause', 'ايقاف الاغنية مؤقتا'
+
+'!&resume', 'تكملة الاغنية'
+
+'!&queue', 'اظهار قائمة التشغيل'
+
+'!&np', 'اظهار الاغنية اللي انت مشغلها حاليا'
+* --------------------------------------------- *
+        **
+        `)
+    message.channel.send(embed)
+}
 });
 
+
 client.on('message', message => {
-    if (message.content === 'general_commands') {
-        let helpEmbed = new Discord.RichEmbed()
-        .setTitle('**أوامر عامة...**')
-        .addField('avatar', "افاتار الشخص المطلوب")
-        .addField('gif', 'البحث عن جيف انت تطلبه')
-        .addField('ping', 'معرفة ping البوت')
-      message.channel.send(helpEmbed);
-    }
+    if(message.content.startsWith(prefix+'help')) {
+   const embed = new Discord.RichEmbed()
+.setColor('RANDOM')
+        .setDescription(`**
+..<اوامر الميوزك>..
+* --------------------------------------------- *
+'!&gif', 'البحث عن جيف انت تطلبه'
+
+'!&ping', 'معرفة ping البوت'
+* --------------------------------------------- *
+        **
+        `)
+    message.channel.send(embed)
+}
 });
+
 
   client.on('ready', function(){
     var ms = 1000 ;
