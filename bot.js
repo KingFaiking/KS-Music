@@ -217,23 +217,23 @@ client.on('message', async msg => {
 		if (!serverQueue) return msg.channel.send('There is no Queue!!');
 		let index = 0;	
 	
-	
-	} else if(command === 'repeat') {
- 
+	}
+	else  if(command === 'repeat') {
+
       let vCh = msg.member.voiceChannel;
 
-      if(!vCh || vCh !== msg.guild.me.voiceChannel) return msg.channel.send('You are not in my voice channel');
+      if(!vCh || vCh !== msg.guild.me.voiceChannel) return msg.channel.send('انا لست في قناة صوتيه!!');
 
       let queue = active.get(msg.guild.id);
 
-      if(!queue || !queue.songs) return msg.channel.send('There is no music playing to repeat it.');
+      if(!queue || !queue.songs) return msg.channel.send('لاتوجد موسيقى لتكرارها.');
 
       if(queue.repeating) {
         queue.repeating = false;
-        return msg.channel.send('🔄 **Repeating Mode** (`False`)');
+        return msg.channel.send('🔄 **Repeating Mode** [متوقف]');
       } else {
         queue.repeating = true;
-        return msg.channel.send('🔄 **Repeating Mode** (`True`)');
+        return msg.channel.send('🔄 **Repeating Mode** [شغال]');
       }
 	
 	
