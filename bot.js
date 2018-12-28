@@ -341,7 +341,7 @@ client.on('message', message => {
 
   client.on('ready', function(){
     var ms = 1000 ;
-    var setGame = [` ${prefix}help | KingsServer Music `,` KingsServer Music `,` KingsServer Music `,` ${prefix}help | KingsServer Music `];
+    var setGame = [` ${prefix}h | KingsServer Music `,` ${prefix}he | KingsServer Music `,` ${prefix}hel | KingsServer Music `,` ${prefix}help | KingsServer Music `];
     var i = -1;
     var j = 0;
     setInterval(function (){
