@@ -217,7 +217,9 @@ client.on('message', async msg => {
 		if (!serverQueue) return msg.channel.send('There is no Queue!!');
 		let index = 0;
 		
-	} else if (command === `repeat`)) {
+	}
+	
+	 if(command === 'repeat') {
 
       let vCh = msg.member.voiceChannel;
 
