@@ -211,18 +211,12 @@ client.on('message', async msg => {
 		const embedNP = new Discord.RichEmbed()
 	    .setDescription(`Now playing **${serverQueue.songs[0].title}**`)
         return msg.channel.sendEmbed(embedNP);
-        
-	} else if (command === `queue`) {
-		
-		if (!serverQueue) return msg.channel.send('There is no Queue!!');
-		let index = 0;	
 	
-	}
-	else  if(command === 'repeat') {
+	} else  if(command === 'loop') {
 
       let vCh = msg.member.voiceChannel;
 
-      if(!vCh || vCh !== msg.guild.me.voiceChannel) return msg.channel.send('انا لست في قناة صوتيه!!');
+      if(!vCh || vCh !== msg.guild.me.voiceChannel) return msg.channel.send('انت لست في قناة صوتيه!!');
 
       let queue = active.get(msg.guild.id);
 
@@ -230,10 +224,10 @@ client.on('message', async msg => {
 
       if(queue.repeating) {
         queue.repeating = false;
-        return msg.channel.send('🔄 **Repeating Mode** [متوقف]');
+        return msg.channel.send('🔄 **looping Mode** [متوقف]');
       } else {
         queue.repeating = true;
-        return msg.channel.send('🔄 **Repeating Mode** [شغال]');
+        return msg.channel.send('🔄 **looping Mode** [شغال]');
       }
 	
 	
@@ -340,7 +334,7 @@ client.on('message', message => {
 * --------------------------------------------- *
 '${prefix}play', 'لتشغيل اغنية'
 
-'${prefix}join', 'دخول رومك الصوتي'
+'${prefix}connect', 'دخول رومك الصوتي'
 
 '${prefix}disconnect', 'الخروج من رومك الصوتي'
 
@@ -350,13 +344,11 @@ client.on('message', message => {
 
 '${prefix}resume', 'تكملة الاغنية'
 
-'${prefix}queue', 'اظهار قائمة التشغيل'
-
 '${prefix}np', 'اظهار الاغنية اللي انت مشغلها حاليا'
 
 '${prefix}vol', 'لرفع صوت لاغنيه'
 
-'${prefix}repeat', 'لتكرار الاغنيه عندما تنتهي'
+'${prefix}loop', 'لتكرار الاغنيه عندما تنتهي'
 * --------------------------------------------- *
         **
         `)
