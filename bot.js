@@ -215,12 +215,11 @@ client.on('message', async msg => {
 	} else if (command === `queue`) {
 		
 		if (!serverQueue) return msg.channel.send('There is no Queue!!');
-		let index = 0;
-		
-	}
+		let index = 0;	
 	
-	 if(command === 'repeat') {
-
+	
+	} else if(command === 'repeat') {
+ 
       let vCh = msg.member.voiceChannel;
 
       if(!vCh || vCh !== msg.guild.me.voiceChannel) return msg.channel.send('You are not in my voice channel');
@@ -236,6 +235,8 @@ client.on('message', async msg => {
         queue.repeating = true;
         return msg.channel.send('🔄 **Repeating Mode** (`True`)');
       }
+	
+	
 //	//	//
 		const embedqu = new Discord.RichEmbed()
         .setTitle("The Queue Songs :")
