@@ -379,15 +379,5 @@ client.on('message', message => {
 });
 
 
-else if (command === `vol`) {
-		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
-		if (!serverQueue) return msg.channel.send('There is nothing playing.');
-		if (!args[1]) return msg.channel.send(`:loud_sound: Current volume is **${serverQueue.volume}**`);
-		serverQueue.volume = args[1];
-		serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 5);
-		return msg.channel.send(`:speaker: تم تغير الصوت الي **${args[1]}**`);
-	} 
-
-
 
 client.login(process.env.BOT_TOKEN);
