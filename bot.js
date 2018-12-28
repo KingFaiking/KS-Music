@@ -345,7 +345,7 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
 .setColor('RANDOM')
         .setDescription(`**
-..<اوامر الميوزك>..
+..<اوامر عامه>..
 * --------------------------------------------- *
 '!&gif', 'البحث عن جيف انت تطلبه'
 
