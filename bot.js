@@ -311,7 +311,7 @@ function play(guild, song) {
 
 
 client.on('message', message => {
-    if (message.content === 'help') {
+    if (message.content === '!*help') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك...**')
         .setDescription('**برفكس البوت (!)**')
@@ -335,20 +335,26 @@ client.on('message', message => {
         .addField('avatar', "افاتار الشخص المطلوب")
         .addField('gif', 'البحث عن جيف انت تطلبه')
         .addField('ping', 'معرفة ping البوت')
-        .setFooter('المزيد قريبا ان شاء الله!')
       message.channel.send(helpEmbed);
     }
 });
 
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Music Bot- Script By : CF Na World Clan`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : CF Na World Clan ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame("http://twitch.tv/IDK")
-client.user.setStatus("dnd")
+  client.on('ready', function(){
+    var ms = 1000 ;
+    var setGame = [` ${prefix}help | KingsServer Music `,` KingsServer Music `,` KingsServer Music `,` ${prefix}help | KingsServer Music `];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://twitch.tv/idk`);
+    }, ms);1000
+
 });
 
 client.login(process.env.BOT_TOKEN);
