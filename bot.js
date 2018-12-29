@@ -1,12 +1,12 @@
 const Discord = require('discord.js');
 
-client.commands = new Discord.Collection();
+const commands = new Discord.Collection();
 
 const Util = require('discord.js');
 
-client.aliases = new Discord.Collection();
+const aliases = new Discord.Collection();
 
-let active = new Map(); 
+const active = new Map(); 
 
 const getYoutubeID = require('get-youtube-id');
 
