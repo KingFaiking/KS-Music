@@ -2,8 +2,6 @@ const Discord = require('discord.js');
 
 const commands = new Discord.Collection();
 
-const Util = require('discord.js');
-
 const aliases = new Discord.Collection();
 
 const active = new Map(); 
