@@ -481,7 +481,7 @@ client.on('message', message => {
 client.on('message', message => {
   var helplist = `**${client.user.tag}** commands:
 
-  ` + '`' + 'كل الهلب بلخاص ...`
+ **كل الأوامر بلخاص**` + `
 
 ** BetterGroip Shop..**`
   if(message.content === prefix + 'help') {
