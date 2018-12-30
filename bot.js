@@ -408,7 +408,7 @@ function play(guild, song) {
 
 //admin
 
-const devs = ['461766920400535552'];
+const devs = ['517409391570583574'];
 
 client.on('message', message => {
     let argresult = message.content.split(` `).slice(1).join(' ');
@@ -476,4 +476,4 @@ client.on('message', message => {
   }
 });
 
-client.login('process.env.BOT_TOKEN');
+client.login(process.env.BOT_TOKEN);
