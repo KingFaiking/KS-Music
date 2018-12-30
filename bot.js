@@ -413,8 +413,9 @@ const devs = ['376567440261382146'];
 client.on('message', message => {
     let argresult = message.content.split(` `).slice(1).join(' ');
     if (message.content.startsWith(prefix + 'setStreaming')) {
-	    
-      client.user.setGame(argresult, 'https://twitch.tv/DynastyShop');
+ if (!devs.includes(message.author.id)) return message.channel.send("<@461766920400535552> only this guy can do restart the bot so don't try again :wink:.");
+      message.delete();
+      client.user.setActivity(argresult, '!&help');
 
     } else if(message.content.startsWith(prefix + 'setWatching')) {
         client.user.setActivity(argresult,{type: 'WATCHING'});
