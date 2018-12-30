@@ -476,4 +476,18 @@ client.on('message', message => {
   }
 });
 
+  });
+
+client.on('message', message => {
+  var helplist = `**${client.user.tag}** commands:
+
+  ` + '`' + 'كل الهلب بلخاص ...`
+
+** BetterGroip Shop..**`
+  if(message.content === prefix + 'help') {
+    message.channel.send(helplist);
+  }
+});
+
+
 client.login(process.env.BOT_TOKEN);
